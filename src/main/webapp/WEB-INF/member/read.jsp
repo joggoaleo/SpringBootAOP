@@ -26,19 +26,8 @@
 				<td>name</td>
 				<td><form:input path="name" readonly="true" /></td>
 			</tr>
-			<tr>
-				<td>auth - 1</td>
-				<td><form:select path="authList[0].auth" disabled="true">
-						<form:option value="" label="=== 권한 선택은 MODIFY에서 ===" />
-						<form:option value="USER" label="사용자" />
-						<form:option value="MEMBER" label="회원" />
-						<form:option value="ADMIN" label="관리자" />
-					</form:select></td>
-			</tr>
-			<tr>
-				<td>email</td>
-				<td><form:input path="email.email" readonly="true" /></td>
-			</tr>
+			
+			
 		</table>
 	</form:form>
 	<div>
@@ -54,7 +43,7 @@
 		$("#btnModify").on("click", function() {
 			var memberNo = $("#no");
 			var memberNoVal = memberNo.val();
-			self.location = "/member/modify?no=" + memberNoVal;
+			self.location = "/member/modifyForm?no=" + memberNoVal;
 		});
 		$("#btnRemove").on("click", function() {
 			formObj.attr("action", "/member/remove");

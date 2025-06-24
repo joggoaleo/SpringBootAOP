@@ -19,8 +19,7 @@
 			<th align="center" width="100">ID</th>
 			<th align="center" width="100">PWD</th>
 			<th align="center" width="180">REGDATE</th>
-			<th align="center" width="180">AUTHORIZED</th>
-			<th align="center" width="180">EMAIL</th>
+
 		</tr>
 		<c:choose>
 			<c:when test="${empty list}">
@@ -32,14 +31,12 @@
 				<c:forEach items="${list}" var="member">
 					<tr>
 						<td align="center">${member.no}</td>
-						<td align="left"><a
-							href='/member/read?no=${member.no}'>${member.name}</a></td>
+						<td align="left"><a href='/member/read?no=${member.no}'>${member.name}</a></td>
 						<td align="right">${member.id}</td>
 						<td align="right">${member.pwd}</td>
 						<td align="center"><fmt:formatDate pattern="yyyy-MM-dd"
 								value="${member.regDate}" /></td>
-								<td align="right">${member.authList[0]}</td>
-								<td align="right">${member.email.email}</td>
+
 					</tr>
 				</c:forEach>
 			</c:otherwise>

@@ -29,11 +29,7 @@
 				<td><form:input path="name" /></td>
 				<td><font color="red"><form:errors path="name" /></font></td>
 			</tr>
-			<tr>
-				<td>email</td>
-				<td><form:input path="email.email" /></td>
-				<td><font color="red"><form:errors path="email.email" /></font></td>
-			</tr>
+			
 		</table>
 	</form:form>
 	<div>

@@ -3,11 +3,14 @@ package com.kh.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kh.domain.Member;
 import com.kh.persistence.MemberRepository;
-
+@Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberRepository repository;
@@ -25,13 +28,13 @@ public class MemberServiceImpl implements MemberService {
 		Member memberEntity = repository.getOne(member.getNo());
 		memberEntity.setId(member.getId());
 		memberEntity.setName(member.getName());
-		memberEntity.setPw(member.getPw());
+		memberEntity.setPwd(member.getPwd());
 
 	}
 
 	@Override
 	@Transactional
-	public void delete(Member member) {
+	public void remove(Member member) {
 		repository.delete(member);
 	}
 
@@ -45,7 +48,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Member> list() {
-		return repository.findAll();
+		return repository.findAll(Sort.by(Direction.DESC,"no"));
 	}
 
 }

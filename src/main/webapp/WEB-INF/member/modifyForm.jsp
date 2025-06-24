@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h3>회원 정보 수정</h3>
-	<form:form modelAttribute="member" action="modify">
+	<form:form modelAttribute="member" action="/member/modify">
 		<form:hidden path="no" />
 		<table>
 			<tr>
@@ -30,21 +30,8 @@
 				<td><form:input path="name" /></td>
 				<td><font color="red"><form:errors path="name" /></font></td>
 			</tr>
-			<tr>
-				<td>email</td>
-				<td><form:input path="email.email" /></td>
-				<td><font color="red"><form:errors path="email.email" /></font></td>
-			</tr>
-			<tr>
-				<td>auth - 1</td>
-				<td><form:select path="authList[0].auth">
-						<form:option value="" label="=== 선택해주세요 ===" />
-						<form:option value="USER" label="사용자" />
-						<form:option value="MEMBER" label="회원" />
-						<form:option value="ADMIN" label="관리자" />
-					</form:select></td>
-				<td><font color="red"><form:errors
-							path="authList[0].auth" /></font></td>
+			
+	
 		</table>
 	</form:form>
 	<div>
